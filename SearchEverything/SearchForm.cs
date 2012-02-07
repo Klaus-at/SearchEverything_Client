@@ -96,11 +96,18 @@ namespace SearchEverything
             {
                 ProcessStartInfo procStartInfo = new ProcessStartInfo();
                 curRow = gvSearchResults.Rows[e.RowIndex];
-                filePath = (String)curRow.Cells["colPath"].Value + "\\" + (String)curRow.Cells["colName"].Value;
-
-                procStartInfo.FileName = filePath;
                 procStartInfo.WorkingDirectory = (String)curRow.Cells["colPath"].Value;
                 procStartInfo.UseShellExecute = true;
+
+                if (e.ColumnIndex == colPath.Index) // open directory on path-doubleclick
+                {
+                    filePath = (String)curRow.Cells["colPath"].Value + "\\";
+                }
+                else // start associated application on doubleclick
+                {
+                    filePath = (String)curRow.Cells["colPath"].Value + "\\" + (String)curRow.Cells["colName"].Value;
+                }
+                procStartInfo.FileName = filePath;
                 Process.Start(procStartInfo);
             }
         }
