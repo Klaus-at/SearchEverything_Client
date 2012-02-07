@@ -27,6 +27,11 @@ namespace SearchEverything.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
 <ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string># each line contains a mapping between a local ETP server filepath and the filepath the user sees.</string>
+  <string># Format is: &lt;ETPUri&gt;;&lt;serverpath&gt;;&lt;userpath&gt;</string>
+  <string># matching is done ""first found"", so the order matters</string>
+  <string># username and password can be ommited from the URIs</string>
+  <string />
   <string>etp://vsvr1:21/;F:\Usr\Pilz\;G:\</string>
   <string>etp://vsvr1:21/;F:\Usr\Software\;I:\</string>
   <string>etp://vsvr1:21/;F:\Usr\UserHome\;J:\</string>
@@ -64,6 +69,11 @@ namespace SearchEverything.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
 <ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string># each line starting with etp:// is interpreted as a connection-URI </string>
+  <string># for a SearchEverything ETP server</string>
+  <string># Uri is in the form etp://[(&lt;username&gt;|&lt;username&gt;:&lt;password&gt;)@]&lt;hostname_or_ip&gt;[:&lt;port&gt;]/</string>
+  <string># this Uri must also be used in the PathMappings</string>
+  <string />
   <string>etp://etp@vsvr1:21/</string>
   <string>#etp://etp:etp@vsvr1:21021/</string>
 </ArrayOfString>")]

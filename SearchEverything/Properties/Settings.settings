@@ -5,6 +5,11 @@
     <Setting Name="PathMappings" Type="System.Collections.Specialized.StringCollection" Scope="Application">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;# each line contains a mapping between a local ETP server filepath and the filepath the user sees.&lt;/string&gt;
+  &lt;string&gt;# Format is: &amp;lt;ETPUri&amp;gt;;&amp;lt;serverpath&amp;gt;;&amp;lt;userpath&amp;gt;&lt;/string&gt;
+  &lt;string&gt;# matching is done "first found", so the order matters&lt;/string&gt;
+  &lt;string&gt;# username and password can be ommited from the URIs&lt;/string&gt;
+  &lt;string /&gt;
   &lt;string&gt;etp://vsvr1:21/;F:\Usr\Pilz\;G:\&lt;/string&gt;
   &lt;string&gt;etp://vsvr1:21/;F:\Usr\Software\;I:\&lt;/string&gt;
   &lt;string&gt;etp://vsvr1:21/;F:\Usr\UserHome\;J:\&lt;/string&gt;
@@ -24,6 +29,11 @@
     <Setting Name="ServerList" Type="System.Collections.Specialized.StringCollection" Scope="Application">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;# each line starting with etp:// is interpreted as a connection-URI &lt;/string&gt;
+  &lt;string&gt;# for a SearchEverything ETP server&lt;/string&gt;
+  &lt;string&gt;# Uri is in the form etp://[(&amp;lt;username&amp;gt;|&amp;lt;username&amp;gt;:&amp;lt;password&amp;gt;)@]&amp;lt;hostname_or_ip&amp;gt;[:&amp;lt;port&amp;gt;]/&lt;/string&gt;
+  &lt;string&gt;# this Uri must also be used in the PathMappings&lt;/string&gt;
+  &lt;string /&gt;
   &lt;string&gt;etp://etp@vsvr1:21/&lt;/string&gt;
   &lt;string&gt;#etp://etp:etp@vsvr1:21021/&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
