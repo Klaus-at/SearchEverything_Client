@@ -77,7 +77,7 @@
     <None Include="Properties\Resources-de.resx">
       <SubType>Designer</SubType>
     </None>
-    <EmbeddedResource Include="Properties\Resources-de.resx">
+    <EmbeddedResource Include="Properties\Resources.de.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchForm.resx">
