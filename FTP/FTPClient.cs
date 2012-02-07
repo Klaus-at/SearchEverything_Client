@@ -27,6 +27,11 @@
 /// Revision 1.1  2003/05/17 12:33:13  bruceb
 /// first release
 ///
+/// KSchmid: added support for ETP
+///         - IsConnected()
+///         - adapt Login() for ETP login with or without password
+///         - Query()
+///         - changed command timeout to 5000 to prevent lock up
 /// 
 /// </summary>
 namespace com.enterprisedt.net.ftp

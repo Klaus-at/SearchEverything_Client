@@ -26,6 +26,11 @@
 /// $Log: FTPControlSocket.cs,v $
 /// Revision 1.1  2003/05/17 12:33:13  bruceb
 /// first release
+/// 
+/// KSchmid: added support for ETP
+///             - lastcommand
+///             - IsConnected()
+///             - QUERY handling in ReadReply()
 ///
 /// 
 /// </summary>

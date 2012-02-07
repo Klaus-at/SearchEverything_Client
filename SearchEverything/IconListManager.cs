@@ -141,10 +141,6 @@ namespace Etier.IconHelper
         public Image GetImage(string filePath, IconReader.IconSize size)
         {
             int iconPos;
-            Image img;
-
-            // Check if the file exists, otherwise, throw exception.
-            // if (!System.IO.File.Exists(filePath)) throw new System.IO.FileNotFoundException("File does not exist");
 
             // Split it down so we can get the extension
             string[] splitPath = filePath.Split(new Char[] { '.' });

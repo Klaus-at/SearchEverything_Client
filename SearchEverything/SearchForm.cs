@@ -18,7 +18,7 @@ namespace SearchEverything
 
         private const int INPUT_DELAY = 500; // delay in ms after last input, before search happens
 
-        private const string DEFAULT_SORT = "Icon DESC, Visible ASC, Name ASC";
+        private const string DEFAULT_SORT = "Visible ASC, Name ASC";
 
 
         private System.Windows.Forms.Timer InputTimer;
