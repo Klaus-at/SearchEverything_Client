@@ -4,7 +4,10 @@ using System.Text;
 
 namespace SearchEverything
 {
-    sealed class SearchConfig
+    /* encapsulate the application settings in a seperate class
+     * translates settings store in file to runtime-usable values
+     */
+    static class SearchConfig
     {
         // public static System.Collections.Generic.SortedList<string, Array> PathMappings;
         public static System.Collections.Generic.Dictionary<string, SortedList<string, string>> PathMappings;

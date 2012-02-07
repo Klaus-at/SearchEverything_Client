@@ -94,7 +94,6 @@ namespace SearchEverything
                     else
                     {
                         row["Icon"] = FILE_ICON;
-                        // row["Icon"] = Properties.Resources.File.ToBitmap();
                     }
                 }
             }
