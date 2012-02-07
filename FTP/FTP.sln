@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTP", "FTP.csproj", "{1FFC34A3-4335-46A0-9C36-2CCF318469D3}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FtpClientTester", "..\FtpClientTester\FtpClientTester.csproj", "{04B9B4EC-6CAB-4CAE-B7B6-DAA885A7A2FF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{1FFC34A3-4335-46A0-9C36-2CCF318469D3}.Debug.ActiveCfg = Debug|.NET
+		{1FFC34A3-4335-46A0-9C36-2CCF318469D3}.Debug.Build.0 = Debug|.NET
+		{1FFC34A3-4335-46A0-9C36-2CCF318469D3}.Release.ActiveCfg = Release|.NET
+		{1FFC34A3-4335-46A0-9C36-2CCF318469D3}.Release.Build.0 = Release|.NET
+		{04B9B4EC-6CAB-4CAE-B7B6-DAA885A7A2FF}.Debug.ActiveCfg = Debug|.NET
+		{04B9B4EC-6CAB-4CAE-B7B6-DAA885A7A2FF}.Debug.Build.0 = Debug|.NET
+		{04B9B4EC-6CAB-4CAE-B7B6-DAA885A7A2FF}.Release.ActiveCfg = Release|.NET
+		{04B9B4EC-6CAB-4CAE-B7B6-DAA885A7A2FF}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

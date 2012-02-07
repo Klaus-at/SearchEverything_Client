@@ -1,0 +1,50 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SearchEverything.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PathMappings" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;etp://vsvr1:21/;F:\Usr\Pilz\;G:\&lt;/string&gt;
+  &lt;string&gt;etp://vsvr1:21/;F:\Usr\Software\;I:\&lt;/string&gt;
+  &lt;string&gt;etp://vsvr1:21/;F:\Usr\UserHome\;J:\&lt;/string&gt;
+  &lt;string&gt;etp://vsvr1:21/;F:\Usr\NCHomag\;H:\&lt;/string&gt;
+  &lt;string&gt;#etp://vsvr1:21/;F:\UsrSys\Buchhaltungsbackup\;R:\&lt;/string&gt;
+  &lt;string&gt;#etp://vsvr1:21021/;F:\Administration\;\\vsvr1\Administration\&lt;/string&gt;
+  &lt;string /&gt;
+  &lt;string&gt;#etp://vsvr1:21021/;F:\UsrSys\Buchhaltungsbackup\;R:\&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="HideNonMappedFolders" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="HideInaccessible" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ServerList" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;etp://etp@vsvr1:21/&lt;/string&gt;
+  &lt;string&gt;#etp://etp:etp@vsvr1:21021/&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="MatchWholeWord" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MatchRegex" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MatchCase" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MatchPath" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MaxResultsPerServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="ShowRealIcons" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,1033 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ftp</name>
+    </assembly>
+    <members>
+        <member name="T:com.enterprisedt.net.ftp.FTPControlSocket">
+            <summary>  
+            Supports client-side FTP operations	
+            </summary>
+            <author>              
+            Bruce Blackshaw
+            </author>
+            <version>         
+            $Revision: 1.1 $
+            </version>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPControlSocket.EOL">
+            <summary>   
+            Standard FTP end of line sequence
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPControlSocket.CONTROL_PORT">
+            <summary>   
+            The control port number for FTP
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPControlSocket.cvsId">
+            <summary>  
+            Revision control id
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPControlSocket.debugResponses">
+            <summary>   Controls if responses sent back by the
+            server are sent to assigned output stream
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPControlSocket.log">
+            <summary>  
+            Output stream debug is written to, stdout by default
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPControlSocket.timeout">
+            <summary>  
+            Timeout value
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPControlSocket.controlSock">
+            <summary>  
+            The underlying socket.
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPControlSocket.writer">
+            <summary>  
+            The control socket's output stream
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPControlSocket.reader">
+            <summary>  
+            The control socket's input stream
+            </summary>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.#ctor(System.String,System.Int32,System.IO.StreamWriter,System.Int32)">
+            <summary>   
+            Constructor. Performs TCP connection and
+            sets up reader/writer. Allows different control
+            port to be used
+            </summary>
+            <param name="remoteHost">  Remote hostname
+            </param>
+            <param name="controlPort"> port for control stream
+            </param>
+            <param name="timeout">      the length of the timeout, in seconds
+            </param>
+            <param name="log">         the new logging stream
+            
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.#ctor(System.Net.IPAddress,System.Int32,System.IO.StreamWriter,System.Int32)">
+            <summary>   
+            Constructor. Performs TCP connection and
+            sets up reader/writer. Allows different control
+            port to be used
+            </summary>
+            <param name="remoteAddr">  Remote inet address
+            </param>
+            <param name="controlPort"> port for control stream
+            </param>
+            <param name="log">         the new logging stream
+            </param>
+            <param name="timeout">      the length of the timeout, in milliseconds
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.Initialize(System.Net.IPAddress,System.Int32,System.IO.StreamWriter,System.Int32)">
+            <summary>   
+            Common constructor code. Performs TCP connection and
+            sets up reader/writer. Allows different control
+            port to be used
+            </summary>
+            <param name="remoteAddr">  Remote inet address
+            </param>
+            <param name="controlPort"> port for control stream
+            </param>
+            <param name="log">         the new logging stream
+            </param>
+            <param name="timeout">      the length of the timeout, in milliseconds
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.ValidateConnection">
+            <summary>   
+            Checks that the standard 220 reply is returned
+            following the initiated connection
+            </summary>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.InitStreams">
+            <summary>  
+            Obtain the reader/writer stream for this connection
+            </summary>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.Logout">
+            <summary>  
+            Quit this FTP session and clean up.
+            </summary>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.CreateDataSocket(com.enterprisedt.net.ftp.FTPConnectMode)">
+            <summary>  
+            Request a data socket be created on the
+            server, connect to it and return our
+            connected socket.
+            </summary>
+            <param name="connectMode">  
+            connection mode to connect with, either active or passive
+            </param>
+            <returns>  
+            connected data socket
+            </returns>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.CreateDataSocketActive">
+            <summary>  
+            Create a listening socket which waits for a connection
+            </summary>
+            <returns>  
+            not connected data socket		
+            </returns>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.SetDataPort(System.Net.IPEndPoint)">
+            <summary>  
+            Sets the data port on the server, i.e. sends a PORT
+            command		
+            </summary>
+            <param name="ep">local endpoint
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.ToByteArray(System.UInt16)">
+            <summary>  
+            Convert a short into a byte array
+            </summary>
+            <param name="val">  value to convert
+            </param>
+            <returns>  a byte array
+            
+            </returns>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.CreateDataSocketPASV">
+            <summary>  
+            Request a data socket be created on the
+            server, connect to it and return our
+            connected socket.
+            </summary>
+            <returns>  connected data socket
+            
+            </returns>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.SendCommand(System.String)">
+            <summary>  
+            Send a command to the FTP server and
+            return the server's reply
+            </summary>
+            <returns>  reply to the supplied command
+            
+            </returns>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.ReadReply">
+            <summary>  
+            Read the FTP server's reply to a previously
+            issued command. RFC 959 states that a reply
+            consists of the 3 digit code followed by text.
+            The 3 digit code is followed by a hyphen if it
+            is a muliline response, and the last line starts
+            with the same 3 digit code.		
+            </summary>
+            <returns>  
+            reply string
+            </returns>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.ValidateReply(System.String,System.String)">
+            <summary>  Validate the response the host has supplied against the
+            expected reply. If we get an unexpected reply we throw an
+            exception, setting the message to that returned by the
+            FTP server
+            
+            </summary>
+            <param name="reply">             the entire reply string we received
+            </param>
+            <param name="expectedReplyCode"> the reply we expected to receive
+            
+            
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.ValidateReply(System.String,System.String[])">
+            <summary>  
+            Validate the response the host has supplied against the
+            expected reply. If we get an unexpected reply we throw an
+            exception, setting the message to that returned by the
+            FTP server
+            </summary>
+            <param name="reply">              
+            the entire reply string we received
+            </param>
+            <param name="expectedReplyCodes"> 
+            array of expected replies
+            </param>
+            <returns>  
+            an object encapsulating the server's reply
+            </returns>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.DebugResponses(System.Boolean)">
+            <summary>  
+            Switch debug of responses on or off
+            </summary>
+            <param name="on"> true if you wish to have responses to
+            stdout, false otherwise
+            
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPControlSocket.SetSocketTimeout(System.Net.Sockets.Socket,System.Int32)">
+            <summary>  
+            Helper method to set a socket's timeout value
+            </summary>
+            <param name="sock">socket to set timeout for
+            </param>
+            <param name="timeout">timeout value to set
+            </param>
+        </member>
+        <member name="P:com.enterprisedt.net.ftp.FTPControlSocket.Timeout">
+            <summary>   
+            Set the TCP timeout on the underlying control socket.
+            </summary>
+            <param>
+            The length of the timeout, in milliseconds
+            </param>
+        </member>
+        <member name="P:com.enterprisedt.net.ftp.FTPControlSocket.LogStream">
+            <summary>  
+            Set the logging stream, replacing stdout		
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:com.enterprisedt.net.ftp.FTPConnectMode" -->
+        <member name="F:com.enterprisedt.net.ftp.FTPConnectMode.ACTIVE">
+            <member>   
+            Represents active connect mode
+            </member>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPConnectMode.PASV">
+            <member>   
+            Represents PASV connect mode
+            </member>
+        </member>
+        <member name="T:com.enterprisedt.net.ftp.FTPTransferType">
+            <summary>  
+            Enumerates the transfer types possible. We support only the two common types, 
+            ASCII and Image (often called binary).
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPTransferType.ASCII">
+            <member>   
+            Represents ASCII transfer type
+            </member>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPTransferType.BINARY">
+            <member>   
+            Represents Image (or binary) transfer type
+            </member>
+        </member>
+        <member name="T:com.enterprisedt.net.ftp.FTPClient">
+            <summary>  
+            Supports client-side FTP. Most common
+            FTP operations are present in this class.
+            </summary>
+            <author>       
+            Bruce Blackshaw
+            </author>
+            <version>      
+            $Revision: 1.1 $
+            </version>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPClient.cvsId">
+            <summary>  
+            Revision control id
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPClient.dtFormat">
+            <summary>  
+            Format to interpret MTDM timestamp
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPClient.BINARY_CHAR">
+            <summary>  
+            The char sent to the server to set BINARY
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPClient.ASCII_CHAR">
+            <summary>  
+            The char sent to the server to set ASCII
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPClient.control">
+            <summary>  
+            Socket responsible for controlling the connection
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPClient.data">
+            <summary>  
+            Socket responsible for transferring the data
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPClient.timeout">
+            <summary>  
+            Socket timeout for both data and control. In milliseconds
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPClient.transferType">
+            <summary>  
+            Record of the transfer type - make the default ASCII
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPClient.connectMode">
+            <summary>  Record of the connect mode - make the default PASV (as this was
+            the original mode supported)
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPClient.lastValidReply">
+            <summary>  
+            Holds the last valid reply from the server on the control socket
+            </summary>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.#ctor(System.String)">
+            <summary>  
+            Constructor. Creates the control socket
+            </summary>
+            <param name="remoteHost"> 
+            the remote hostname 
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.#ctor(System.String,System.Int32)">
+            <summary>  
+            Constructor. Creates the control socket
+            </summary>
+            <param name="remoteHost"> the remote hostname
+            </param>
+            <param name="controlPort"> port for control stream
+            
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.#ctor(System.Net.IPAddress)">
+            <summary>  
+            Constructor. Creates the control socket
+            </summary>
+            <param name="remoteAddr"> the address of the
+            remote host
+            
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.#ctor(System.Net.IPAddress,System.Int32)">
+            <summary>  
+            Constructor. Creates the control
+            socket. Allows setting of control port (normally
+            set by default to 21).
+            </summary>
+            <param name="remoteAddr"> the address of the
+            remote host
+            </param>
+            <param name="controlPort"> port for control stream
+            
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.#ctor(System.String,System.IO.StreamWriter,System.Int32)">
+            <summary>  
+            Constructor. Creates the control socket
+            </summary>
+            <param name="remoteHost"> 
+            the remote hostname
+            </param>
+            <param name="log">      
+            log stream for logging to
+            </param>		
+            <param name="timeout">      
+            the length of the timeout, in milliseconds
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.#ctor(System.String,System.Int32,System.IO.StreamWriter,System.Int32)">
+            <summary>  
+            Constructor. Creates the control socket
+            </summary>
+            <param name="remoteHost"> 
+            the remote hostname
+            </param>
+            <param name="controlPort"> 
+            port for control stream
+            </param>
+            <param name="log">      
+            log stream for logging to
+            </param>		
+            <param name="timeout">      
+            the length of the timeout, in milliseconds
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.#ctor(System.Net.IPAddress,System.IO.StreamWriter,System.Int32)">
+            <summary>  
+            Constructor. Creates the control socket
+            </summary>
+            <param name="remoteAddr"> 
+            the address of the remote host
+            </param>
+            <param name="log">      
+            log stream for logging to
+            </param>				
+            <param name="timeout">      
+            the length of the timeout, in seconds
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.#ctor(System.Net.IPAddress,System.Int32,System.IO.StreamWriter,System.Int32)">
+            <summary>  
+            Constructor. Creates the control
+            socket. Allows setting of control port (normally
+            set by default to 21).
+            </summary>
+            <param name="remoteAddr"> 
+            the address of the remote host
+            </param>
+            <param name="controlPort">
+            port for control stream
+            </param>
+            <param name="log">      
+            log stream for logging to
+            </param>		
+            <param name="timeout">      
+            the length of the timeout, in seconds		
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Login(System.String,System.String)">
+            <summary>  
+            Login into an account on the FTP server. This
+            call completes the entire login process
+            </summary>
+            <param name="user">      
+            user name
+            </param>
+            <param name="password">  
+            user's password
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.User(System.String)">
+            <summary>  
+            Supply the user name to log into an account
+            on the FTP server. Must be followed by the
+            password() method - but we allow for
+            </summary>
+            <param name="user">      
+            user name
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Password(System.String)">
+            <summary>  
+            Supplies the password for a previously supplied
+            username to log into the FTP server. Must be
+            preceeded by the user() method
+            </summary>
+            <param name="password">  
+            user's password
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Quote(System.String,System.String[])">
+            <summary>  
+            Issue arbitrary ftp commands to the FTP server.
+            </summary>
+            <param name="command">    
+            ftp command to be sent to server
+            </param>
+            <param name="validCodes"> 
+            valid return codes for this command		
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Put(System.String,System.String)">
+            <summary>  
+            Put a local file onto the FTP server. It
+            is placed in the current directory.
+            </summary>
+            <param name="localPath">  
+            path of the local file
+            </param>
+            <param name="remoteFile"> 
+            name of remote file in current directory		
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Put(System.IO.Stream,System.String)">
+            <summary>  
+            Put a stream of data onto the FTP server. It
+            is placed in the current directory.
+            </summary>
+            <param name="srcStream">  
+            input stream of data to put
+            </param>
+            <param name="remoteFile"> 
+            name of remote file in current directory		
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Put(System.String,System.String,System.Boolean)">
+            <summary>  
+            Put a local file onto the FTP server. It
+            is placed in the current directory. Allows appending
+            if current file exists
+            </summary>
+            <param name="localPath">  
+            path of the local file
+            </param>
+            <param name="remoteFile"> 
+            name of remote file in current directory
+            </param>
+            <param name="append">     
+            true if appending, false otherwise		
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Put(System.IO.Stream,System.String,System.Boolean)">
+            <summary>  
+            Put a stream of data onto the FTP server. It
+            is placed in the current directory. Allows appending
+            if current file exists
+            </summary>
+            <param name="srcStream">  
+            input stream of data to put
+            </param>
+            <param name="remoteFile"> 
+            name of remote file in current directory
+            </param>
+            <param name="append">     
+            true if appending, false otherwise 
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.ValidateTransfer">
+            <summary>  
+            Validate that the put() or get() was successful
+            </summary>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.GetDataStream">
+            <summary>  
+            Get the network stream associated with the data socket
+            </summary>
+            <returns>  
+            Network stream ready for reading/writing
+            </returns>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.InitPut(System.String,System.Boolean)">
+            <summary>  
+            Request the server to set up the put
+            </summary>
+            <param name="remoteFile"> name of remote file in
+            current directory
+            </param>
+            <param name="append">     true if appending, false otherwise
+            
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.PutASCII(System.String,System.String,System.Boolean)">
+            <summary>  
+            Put as ASCII, i.e. read a line at a time and write
+            inserting the correct FTP separator
+            </summary>
+            <param name="localPath">  
+            full path of local file to read from
+            </param>
+            <param name="remoteFile"> 
+            name of remote file we are writing to
+            </param>
+            <param name="append">     
+            true if appending, false otherwise
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.PutASCII(System.IO.Stream,System.String,System.Boolean)">
+            <summary>  
+            Put as ASCII, i.e. read a line at a time and write
+            inserting the correct FTP separator
+            </summary>
+            <param name="srcStream">  
+            input stream of data to put
+            </param>
+            <param name="remoteFile"> 
+            name of remote file we are writing to
+            </param>
+            <param name="append">     
+            true if appending, false otherwise
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.PutBinary(System.String,System.String,System.Boolean)">
+            <summary>  
+            Put as binary, i.e. read and write raw bytes
+            </summary>
+            <param name="localPath">  
+            full path of local file to read from
+            </param>
+            <param name="remoteFile"> 
+            name of remote file we are writing to
+            </param>
+            <param name="append">     
+            true if appending, false otherwise
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.PutBinary(System.IO.Stream,System.String,System.Boolean)">
+            <summary>  
+            Put as binary, i.e. read and write raw bytes
+            </summary>
+            <param name="srcStream">  
+            input stream of data to put
+            </param>
+            <param name="remoteFile"> 
+            name of remote file we are writing to
+            </param>
+            <param name="append">     
+            true if appending, false otherwise
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Put(System.Byte[],System.String)">
+            <summary>  
+            Put data onto the FTP server. It
+            is placed in the current directory.
+            </summary>
+            <param name="bytes">       
+            array of bytes
+            </param>
+            <param name="remoteFile"> 
+            name of remote file in current directory
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Put(System.Byte[],System.String,System.Boolean)">
+            <summary>  
+            Put data onto the FTP server. It
+            is placed in the current directory. Allows
+            appending if current file exists
+            </summary>
+            <param name="bytes">       
+            array of bytes
+            </param>
+            <param name="remoteFile"> name of remote file in
+            current directory
+            </param>
+            <param name="append">     true if appending, false otherwise
+            
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Get(System.String,System.String)">
+            <summary>  
+            Get data from the FTP server. Uses the currently
+            set transfer mode.
+            </summary>
+            <param name="localPath">  
+            local file to put data in
+            </param>
+            <param name="remoteFile"> 
+            name of remote file in current directory		
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Get(System.IO.Stream,System.String)">
+            <summary>  
+            Get data from the FTP server. Uses the currently
+            set transfer mode.
+            </summary>
+            <param name="destStream"> 
+            data stream to write data to
+            </param>
+            <param name="remoteFile"> 
+            name of remote file in current directory
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.InitGet(System.String)">
+            <summary>  
+            Request to the server that the get is set up
+            </summary>
+            <param name="remoteFile"> 
+            name of remote file
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.GetASCII(System.String,System.String)">
+            <summary>  
+            Get as ASCII, i.e. read a line at a time and write
+            using the correct newline separator for the OS
+            </summary>
+            <param name="localPath">  
+            full path of local file to write to
+            </param>
+            <param name="remoteFile"> 
+            name of remote file		
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.GetASCII(System.IO.Stream,System.String)">
+            <summary>  
+            Get as ASCII, i.e. read a line at a time and write
+            using the correct newline separator for the OS
+            </summary>
+            <param name="destStream"> 
+            data stream to write data to
+            </param>
+            <param name="remoteFile"> 
+            name of remote file
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.GetBinary(System.String,System.String)">
+            <summary>  
+            Get as binary file, i.e. straight transfer of data
+            </summary>
+            <param name="localPath">  
+            full path of local file to write to
+            </param>
+            <param name="remoteFile"> 
+            name of remote file
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.GetBinary(System.IO.Stream,System.String)">
+            <summary>  
+            Get as binary file, i.e. straight transfer of data
+            </summary>
+            <param name="destStream"> 
+            stream to write to
+            </param>
+            <param name="remoteFile"> 
+            name of remote file
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Get(System.String)">
+            <summary>  
+            Get data from the FTP server. Transfers in
+            whatever mode we are in. Retrieve as a byte array. Note
+            that we may experience memory limitations as the
+            entire file must be held in memory at one time.
+            </summary>
+            <param name="remoteFile"> 
+            name of remote file in current directory
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Site(System.String)">
+            <summary>  
+            Run a site-specific command on the
+            server. Support for commands is dependent
+            on the server
+            </summary>
+            <param name="command">  
+            the site command to run
+            </param>
+            <returns> true if command ok, false if
+            command not implemented
+            </returns>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Dir">
+            <summary>  
+            List current directory's contents as an array of strings of
+            filenames.
+            </summary>
+            <returns>  
+            an array of current directory listing strings
+            </returns>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Dir(System.String)">
+            <summary>  
+            List a directory's contents as an array of strings of filenames.
+            </summary>
+            <param name="dirname"> name of directory(<b>not</b> a file mask)
+            </param>
+            <returns>  an array of directory listing strings
+            
+            </returns>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Dir(System.String,System.Boolean)">
+            <summary>  
+            List a directory's contents as an array of strings. A detailed
+            listing is available, otherwise just filenames are provided.
+            The detailed listing varies in details depending on OS and
+            FTP server. Note that a full listing can be used on a file
+            name to obtain information about a file
+            </summary>
+            <param name="dirname"> 
+            name of directory (<b>not</b> a file mask)
+            </param>
+            <param name="full">    
+            true if detailed listing required false otherwise
+            </param>
+            <returns>  
+            an array of directory listing strings
+            </returns>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.DebugResponses(System.Boolean)">
+            <summary>  
+            Switch debug of responses on or off
+            </summary>
+            <param name="on"> true if you wish to have responses to
+            the log stream, false otherwise
+            
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Delete(System.String)">
+            <summary>  
+            Delete the specified remote file
+            </summary>
+            <param name="remoteFile"> name of remote file to
+            delete
+            
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Rename(System.String,System.String)">
+            <summary>  
+            Rename a file or directory
+            </summary>
+            <param name="from"> name of file or directory to rename
+            </param>
+            <param name="to">   intended name
+            
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Rmdir(System.String)">
+            <summary>  
+            Delete the specified remote working directory
+            </summary>
+            <param name="dir"> 
+            name of remote directory to delete
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Mkdir(System.String)">
+            <summary>  
+            Create the specified remote working directory
+            </summary>
+            <param name="dir"> 
+            name of remote directory to create		
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Chdir(System.String)">
+            <summary>  
+            Change the remote working directory to
+            that supplied
+            </summary>
+            <param name="dir"> name of remote directory to
+            change to
+            
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.ModTime(System.String)">
+            <summary>  
+            Get modification time for a remote file
+            </summary>
+            <param name="remoteFile">  
+            name of remote file
+            </param>
+            <returns>   
+            modification time of file as a date
+            </returns>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Pwd">
+            <summary>  
+            Get the current remote working directory
+            </summary>
+            <returns>   
+            the current working directory
+            </returns>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.System">
+            <summary>  
+            Get the type of the OS at the server
+            </summary>
+            <returns>   
+            the type of server OS		
+            </returns>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Help(System.String)">
+            <summary>  
+            Get the help text for the specified command
+            </summary>
+            <param name="command"> name of the command to get help on
+            </param>
+            <returns> help text from the server for the supplied command
+            
+            </returns>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPClient.Quit">
+            <summary>  
+            Quit the FTP session
+            </summary>
+        </member>
+        <member name="P:com.enterprisedt.net.ftp.FTPClient.Timeout">
+            <summary>   
+            Set the TCP timeout on the underlying socket.
+            
+            If a timeout is set, then any operation which
+            takes longer than the timeout value will be
+            killed with a java.io.InterruptedException. We
+            set both the control and data connections
+            
+            </summary>
+        </member>
+        <member name="P:com.enterprisedt.net.ftp.FTPClient.ConnectMode">
+            <summary>  
+            Set the connect mode to ACTIVE or PASV
+            </summary>
+        </member>
+        <member name="P:com.enterprisedt.net.ftp.FTPClient.LastValidReply">
+            <summary>  
+            Gets the latest valid reply from the server
+            </summary>
+            <returns>  
+            reply object encapsulating last valid server response
+            </returns>
+        </member>
+        <member name="P:com.enterprisedt.net.ftp.FTPClient.LogStream">
+            <summary>  
+            Set the logging stream, replacing stdout
+            </summary>
+        </member>
+        <member name="P:com.enterprisedt.net.ftp.FTPClient.TransferType">
+            <summary>  
+            Get the current transfer type
+            </summary>
+            <returns>  
+            the current type of the transfer, i.e. BINARY or ASCII
+            </returns>
+            <summary>  
+            Set the transfer type
+            </summary>
+        </member>
+        <member name="T:com.enterprisedt.net.ftp.FTPException">
+            <summary>  
+            FTP specific exceptions	
+            </summary>
+            <author>      
+            Bruce Blackshaw
+            </author>
+            <version>     
+            $Revision: 1.1 $
+            </version>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPException.cvsId">
+            <summary>  
+            Revision control id
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPException.replyCode">
+            <summary>  Integer reply code
+            </summary>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPException.#ctor(System.String)">
+            <summary>   
+            Constructor. Delegates to super.
+            </summary>
+            <param name="msg">  Message that the user will be
+            able to retrieve
+            
+            </param>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPException.#ctor(System.String,System.String)">
+            <summary>  
+            Constructor. Permits setting of reply code
+            </summary>
+            <param name="msg">       
+            message that the user will be able to retrieve
+            </param>
+            <param name="replyCode"> string form of reply code
+            
+            </param>
+        </member>
+        <member name="P:com.enterprisedt.net.ftp.FTPException.ReplyCode">
+            <summary>   
+            Get the reply code if it exists
+            </summary>
+            <returns>  
+            reply if it exists, -1 otherwise
+            </returns>
+        </member>
+        <member name="T:com.enterprisedt.net.ftp.FTPReply">
+            <summary>  Encapsulates the FTP server reply
+             
+            </summary>
+            <author>       Bruce Blackshaw
+            </author>
+            <version>      $Revision: 1.1 $
+            
+            </version>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPReply.cvsId">
+            <summary>  Revision control id
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPReply.replyCode">
+            <summary>  Reply code
+            </summary>
+        </member>
+        <member name="F:com.enterprisedt.net.ftp.FTPReply.replyText">
+            <summary>  Reply text
+            </summary>
+        </member>
+        <member name="M:com.enterprisedt.net.ftp.FTPReply.#ctor(System.String,System.String)">
+            <summary>  
+            Constructor. Only to be constructed
+            by this package, hence internal access
+            </summary>
+            <param name="replyCode"> the server's reply code
+            </param>
+            <param name="replyText"> the server's reply text
+            
+            </param>
+        </member>
+        <member name="P:com.enterprisedt.net.ftp.FTPReply.ReplyCode">
+            <summary>  Getter for reply code
+             
+            </summary>
+            <returns> server's reply code
+            
+            </returns>
+        </member>
+        <member name="P:com.enterprisedt.net.ftp.FTPReply.ReplyText">
+            <summary>  Getter for reply text
+            
+            </summary>
+            <returns> server's reply text
+            
+            </returns>
+        </member>
+    </members>
+</doc>
