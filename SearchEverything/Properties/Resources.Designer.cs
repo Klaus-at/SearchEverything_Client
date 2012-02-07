@@ -70,7 +70,7 @@ namespace SearchEverything.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Größe.
+        ///   Looks up a localized string similar to Size.
         /// </summary>
         internal static string FileSizeText {
             get {
@@ -79,7 +79,7 @@ namespace SearchEverything.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dateisuche.
+        ///   Looks up a localized string similar to Filesearch.
         /// </summary>
         internal static string FormName {
             get {
@@ -88,7 +88,7 @@ namespace SearchEverything.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Verbindung zu {0} fehlgeschlagen!.
+        ///   Looks up a localized string similar to Connection to {0} failed!.
         /// </summary>
         internal static string infoConnectionToServerFailed_arg1 {
             get {
@@ -97,7 +97,7 @@ namespace SearchEverything.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hole Dateiinformationen....
+        ///   Looks up a localized string similar to Fetching file information....
         /// </summary>
         internal static string infoFetchingFileDetails {
             get {
@@ -106,7 +106,7 @@ namespace SearchEverything.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Geändert.
+        ///   Looks up a localized string similar to Modified.
         /// </summary>
         internal static string LastModifiedText {
             get {
@@ -115,7 +115,7 @@ namespace SearchEverything.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Suche:.
+        ///   Looks up a localized string similar to Search:.
         /// </summary>
         internal static string lblSearchText {
             get {
@@ -124,7 +124,7 @@ namespace SearchEverything.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Beenden.
+        ///   Looks up a localized string similar to &amp;Close.
         /// </summary>
         internal static string menuItemClose {
             get {
@@ -133,7 +133,7 @@ namespace SearchEverything.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Datei.
+        ///   Looks up a localized string similar to &amp;File.
         /// </summary>
         internal static string menuItemFile {
             get {
@@ -142,7 +142,7 @@ namespace SearchEverything.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Groß-/Kleinschreibung beachten.
+        ///   Looks up a localized string similar to Match &amp;case.
         /// </summary>
         internal static string menuItemMatchCase {
             get {
@@ -151,7 +151,7 @@ namespace SearchEverything.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Im &amp;Pfad suchen.
+        ///   Looks up a localized string similar to Match &amp;path.
         /// </summary>
         internal static string menuItemMatchPath {
             get {
@@ -160,7 +160,7 @@ namespace SearchEverything.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nur ganzes &amp;Wort suchen.
+        ///   Looks up a localized string similar to Match &amp;whole word.
         /// </summary>
         internal static string menuItemMatchWholeWord {
             get {
@@ -169,7 +169,7 @@ namespace SearchEverything.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Maximale &amp;Trefferanzahl:.
+        ///   Looks up a localized string similar to Max &amp;results per server:.
         /// </summary>
         internal static string menuItemMaxHitsPerServer {
             get {
@@ -178,7 +178,7 @@ namespace SearchEverything.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Optionen.
+        ///   Looks up a localized string similar to &amp;Options.
         /// </summary>
         internal static string menuItemOptions {
             get {
@@ -187,7 +187,7 @@ namespace SearchEverything.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;Dateisymbole anzeigen.
+        ///   Looks up a localized string similar to Show &amp;icons.
         /// </summary>
         internal static string menuItemShowRealIcons {
             get {
@@ -196,7 +196,7 @@ namespace SearchEverything.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pfad.
+        ///   Looks up a localized string similar to Path.
         /// </summary>
         internal static string PathNameText {
             get {
@@ -214,7 +214,7 @@ namespace SearchEverything.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ServerPfad.
+        ///   Looks up a localized string similar to Serverpath.
         /// </summary>
         internal static string ServerPathText {
             get {

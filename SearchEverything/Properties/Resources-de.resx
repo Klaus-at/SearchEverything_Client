@@ -118,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblSearchText" xml:space="preserve">
-    <value>Search:</value>
+    <value>Suche:</value>
   </data>
   <data name="FileNameText" xml:space="preserve">
     <value>Name</value>
   </data>
   <data name="PathNameText" xml:space="preserve">
-    <value>Path</value>
+    <value>Pfad</value>
   </data>
   <data name="LastModifiedText" xml:space="preserve">
-    <value>Modified</value>
+    <value>Geändert</value>
   </data>
   <data name="FileSizeText" xml:space="preserve">
-    <value>Size</value>
+    <value>Größe</value>
   </data>
   <data name="ServerPathText" xml:space="preserve">
-    <value>Serverpath</value>
+    <value>ServerPfad</value>
     <comment>usually not visible in UI</comment>
   </data>
   <data name="ServerURIText" xml:space="preserve">
@@ -145,37 +145,37 @@
     <comment>usually not visible in UI</comment>
   </data>
   <data name="menuItemFile" xml:space="preserve">
-    <value>&amp;File</value>
+    <value>&amp;Datei</value>
   </data>
   <data name="menuItemClose" xml:space="preserve">
-    <value>&amp;Close</value>
+    <value>&amp;Beenden</value>
   </data>
   <data name="menuItemOptions" xml:space="preserve">
-    <value>&amp;Options</value>
+    <value>&amp;Optionen</value>
   </data>
   <data name="menuItemMatchCase" xml:space="preserve">
-    <value>Match &amp;case</value>
+    <value>&amp;Groß-/Kleinschreibung beachten</value>
   </data>
   <data name="menuItemMatchWholeWord" xml:space="preserve">
-    <value>Match &amp;whole word</value>
+    <value>Nur ganzes &amp;Wort suchen</value>
   </data>
   <data name="menuItemMatchPath" xml:space="preserve">
-    <value>Match &amp;path</value>
+    <value>Im &amp;Pfad suchen</value>
   </data>
   <data name="menuItemShowRealIcons" xml:space="preserve">
-    <value>Show &amp;icons</value>
+    <value>&amp;Dateisymbole anzeigen</value>
   </data>
   <data name="menuItemMaxHitsPerServer" xml:space="preserve">
-    <value>Max &amp;results per server:</value>
+    <value>Maximale &amp;Trefferanzahl:</value>
   </data>
   <data name="FormName" xml:space="preserve">
-    <value>Filesearch</value>
+    <value>Dateisuche</value>
   </data>
   <data name="infoFetchingFileDetails" xml:space="preserve">
-    <value>Fetching file information...</value>
+    <value>Hole Dateiinformationen...</value>
   </data>
   <data name="infoConnectionToServerFailed_arg1" xml:space="preserve">
-    <value>Connection to {0} failed!</value>
+    <value>Verbindung zu {0} fehlgeschlagen!</value>
     <comment>include {0} for Server URI!</comment>
   </data>
 </root>

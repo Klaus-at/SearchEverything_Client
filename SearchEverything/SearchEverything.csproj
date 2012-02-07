@@ -74,6 +74,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Properties\Resources-de.resx">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="Properties\Resources-de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>SearchForm.cs</DependentUpon>
@@ -115,17 +121,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Folder.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Closed Folder.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\105.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <BaseApplicationManifest Include="Properties\app.manifest" />
-    <None Include="Resources\131.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
@@ -133,6 +129,9 @@
       <ProductName>.NET Framework 2.0</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
