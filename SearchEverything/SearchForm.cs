@@ -393,5 +393,10 @@ namespace SearchEverything
             }
         }
 
+        private void SearchForm_Activated(object sender, EventArgs e)
+        {
+            tbSearchString.Focus();
+        }
+
     }
 }

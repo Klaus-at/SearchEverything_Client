@@ -29,7 +29,7 @@ namespace SearchEverything
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblSearch = new System.Windows.Forms.Label();
             this.tbSearchString = new System.Windows.Forms.TextBox();
             this.gvSearchResults = new System.Windows.Forms.DataGridView();
@@ -69,9 +69,9 @@ namespace SearchEverything
             this.lblSearch.AutoSize = true;
             this.lblSearch.Location = new System.Drawing.Point(8, 30);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(41, 13);
+            this.lblSearch.Size = new System.Drawing.Size(44, 13);
             this.lblSearch.TabIndex = 0;
-            this.lblSearch.Text = Properties.Resources.lblSearchText;
+            this.lblSearch.Text = "Search:";
             // 
             // tbSearchString
             // 
@@ -89,8 +89,8 @@ namespace SearchEverything
             this.gvSearchResults.AllowUserToDeleteRows = false;
             this.gvSearchResults.AllowUserToOrderColumns = true;
             this.gvSearchResults.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gvSearchResults.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gvSearchResults.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gvSearchResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
@@ -139,7 +139,7 @@ namespace SearchEverything
             // 
             this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colName.DataPropertyName = "Name";
-            this.colName.HeaderText = Properties.Resources.FileNameText;
+            this.colName.HeaderText = global::SearchEverything.Properties.Resources.FileNameText;
             this.colName.MinimumWidth = 200;
             this.colName.Name = "colName";
             this.colName.ReadOnly = true;
@@ -148,14 +148,14 @@ namespace SearchEverything
             // 
             this.colPath.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colPath.DataPropertyName = "Path";
-            this.colPath.HeaderText = Properties.Resources.PathNameText;
+            this.colPath.HeaderText = global::SearchEverything.Properties.Resources.PathNameText;
             this.colPath.Name = "colPath";
             this.colPath.ReadOnly = true;
             // 
             // colModified
             // 
             this.colModified.DataPropertyName = "Modified";
-            this.colModified.HeaderText = Properties.Resources.LastModifiedText;
+            this.colModified.HeaderText = global::SearchEverything.Properties.Resources.LastModifiedText;
             this.colModified.MinimumWidth = 100;
             this.colModified.Name = "colModified";
             this.colModified.ReadOnly = true;
@@ -163,7 +163,7 @@ namespace SearchEverything
             // colSize
             // 
             this.colSize.DataPropertyName = "Size";
-            this.colSize.HeaderText = Properties.Resources.FileSizeText;
+            this.colSize.HeaderText = global::SearchEverything.Properties.Resources.FileSizeText;
             this.colSize.MinimumWidth = 100;
             this.colSize.Name = "colSize";
             this.colSize.ReadOnly = true;
@@ -171,7 +171,7 @@ namespace SearchEverything
             // colServerPath
             // 
             this.colServerPath.DataPropertyName = "ServerPath";
-            this.colServerPath.HeaderText = Properties.Resources.ServerPathText;
+            this.colServerPath.HeaderText = global::SearchEverything.Properties.Resources.ServerPathText;
             this.colServerPath.Name = "colServerPath";
             this.colServerPath.ReadOnly = true;
             this.colServerPath.Visible = false;
@@ -179,7 +179,7 @@ namespace SearchEverything
             // colServerURI
             // 
             this.colServerURI.DataPropertyName = "ServerURI";
-            this.colServerURI.HeaderText = Properties.Resources.ServerURIText;
+            this.colServerURI.HeaderText = global::SearchEverything.Properties.Resources.ServerURIText;
             this.colServerURI.Name = "colServerURI";
             this.colServerURI.ReadOnly = true;
             this.colServerURI.Visible = false;
@@ -188,7 +188,7 @@ namespace SearchEverything
             // 
             this.colVisible.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.colVisible.DataPropertyName = "Visible";
-            this.colVisible.HeaderText = Properties.Resources.RowVisibleText;
+            this.colVisible.HeaderText = global::SearchEverything.Properties.Resources.RowVisibleText;
             this.colVisible.Name = "colVisible";
             this.colVisible.ReadOnly = true;
             this.colVisible.Visible = false;
@@ -256,15 +256,15 @@ namespace SearchEverything
             this.menuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuItemClose});
             this.menuFile.Name = "menuFile";
-            this.menuFile.Size = new System.Drawing.Size(44, 20);
-            this.menuFile.Text = Properties.Resources.menuItemFile;
+            this.menuFile.Size = new System.Drawing.Size(35, 20);
+            this.menuFile.Text = global::SearchEverything.Properties.Resources.menuItemFile;
             // 
             // menuItemClose
             // 
             this.menuItemClose.Name = "menuItemClose";
             this.menuItemClose.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.menuItemClose.Size = new System.Drawing.Size(167, 22);
-            this.menuItemClose.Text = Properties.Resources.menuItemClose;
+            this.menuItemClose.Size = new System.Drawing.Size(151, 22);
+            this.menuItemClose.Text = global::SearchEverything.Properties.Resources.menuItemClose;
             this.menuItemClose.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
             // menuOptions
@@ -277,24 +277,24 @@ namespace SearchEverything
             this.toolStripSeparator1,
             this.menuItemMaxMatchesLabel});
             this.menuOptions.Name = "menuOptions";
-            this.menuOptions.Size = new System.Drawing.Size(63, 20);
-            this.menuOptions.Text = Properties.Resources.menuItemOptions;
+            this.menuOptions.Size = new System.Drawing.Size(56, 20);
+            this.menuOptions.Text = global::SearchEverything.Properties.Resources.menuItemOptions;
             // 
             // menuItemMatchCase
             // 
             this.menuItemMatchCase.Checked = global::SearchEverything.Properties.Settings.Default.MatchCase;
             this.menuItemMatchCase.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menuItemMatchCase.Name = "menuItemMatchCase";
-            this.menuItemMatchCase.Size = new System.Drawing.Size(238, 22);
-            this.menuItemMatchCase.Text = Properties.Resources.menuItemMatchCase;
+            this.menuItemMatchCase.Size = new System.Drawing.Size(197, 22);
+            this.menuItemMatchCase.Text = global::SearchEverything.Properties.Resources.menuItemMatchCase;
             this.menuItemMatchCase.Click += new System.EventHandler(this.menuItemMatchCase_Click);
             // 
             // menuItemMatchWholeWord
             // 
             this.menuItemMatchWholeWord.Checked = global::SearchEverything.Properties.Settings.Default.MatchWholeWord;
             this.menuItemMatchWholeWord.Name = "menuItemMatchWholeWord";
-            this.menuItemMatchWholeWord.Size = new System.Drawing.Size(238, 22);
-            this.menuItemMatchWholeWord.Text = Properties.Resources.menuItemMatchWholeWord;
+            this.menuItemMatchWholeWord.Size = new System.Drawing.Size(197, 22);
+            this.menuItemMatchWholeWord.Text = global::SearchEverything.Properties.Resources.menuItemMatchWholeWord;
             this.menuItemMatchWholeWord.Click += new System.EventHandler(this.menuItemMatchWholeWord_Click);
             // 
             // menuItemMatchPath
@@ -302,8 +302,8 @@ namespace SearchEverything
             this.menuItemMatchPath.Checked = global::SearchEverything.Properties.Settings.Default.MatchPath;
             this.menuItemMatchPath.Enabled = false;
             this.menuItemMatchPath.Name = "menuItemMatchPath";
-            this.menuItemMatchPath.Size = new System.Drawing.Size(238, 22);
-            this.menuItemMatchPath.Text = Properties.Resources.menuItemMatchPath;
+            this.menuItemMatchPath.Size = new System.Drawing.Size(197, 22);
+            this.menuItemMatchPath.Text = global::SearchEverything.Properties.Resources.menuItemMatchPath;
             this.menuItemMatchPath.Click += new System.EventHandler(this.menuItemMatchPath_Click);
             // 
             // menuItemShowRealIcons
@@ -311,22 +311,22 @@ namespace SearchEverything
             this.menuItemShowRealIcons.Checked = global::SearchEverything.Properties.Settings.Default.ShowRealIcons;
             this.menuItemShowRealIcons.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menuItemShowRealIcons.Name = "menuItemShowRealIcons";
-            this.menuItemShowRealIcons.Size = new System.Drawing.Size(238, 22);
-            this.menuItemShowRealIcons.Text = Properties.Resources.menuItemShowRealIcons;
+            this.menuItemShowRealIcons.Size = new System.Drawing.Size(197, 22);
+            this.menuItemShowRealIcons.Text = global::SearchEverything.Properties.Resources.menuItemShowRealIcons;
             this.menuItemShowRealIcons.Click += new System.EventHandler(this.menuItemShowRealIcons_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(235, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(194, 6);
             // 
             // menuItemMaxMatchesLabel
             // 
             this.menuItemMaxMatchesLabel.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuItemMaxResultsPerServer});
             this.menuItemMaxMatchesLabel.Name = "menuItemMaxMatchesLabel";
-            this.menuItemMaxMatchesLabel.Size = new System.Drawing.Size(238, 22);
-            this.menuItemMaxMatchesLabel.Text = Properties.Resources.menuItemMaxHitsPerServer;
+            this.menuItemMaxMatchesLabel.Size = new System.Drawing.Size(197, 22);
+            this.menuItemMaxMatchesLabel.Text = global::SearchEverything.Properties.Resources.menuItemMaxHitsPerServer;
             // 
             // menuItemMaxResultsPerServer
             // 
@@ -350,7 +350,8 @@ namespace SearchEverything
             this.Controls.Add(this.lblSearch);
             this.MainMenuStrip = this.menuStripMain;
             this.Name = "SearchForm";
-            this.Text = Properties.Resources.FormName;
+            this.Text = "Filesearch";
+            this.Activated += new System.EventHandler(this.SearchForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.gvSearchResults)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultDataTableBindingSource)).EndInit();
